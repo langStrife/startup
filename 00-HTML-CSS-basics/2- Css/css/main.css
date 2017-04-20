@@ -96,19 +96,25 @@ textarea {
    ========================================================================== */
 
 body{
-    background-color: #464646
+    background-color: #464646;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    color:#FFFFFF;
+    padding:10px;
+    text-align:center;
 }
 
 
 #head1 {
     background-color: #7d7d7d;
     width: 90%;
-    padding: 10px;
-    margin: 5%; 
+    border-radius:25px;
+    padding:10px;
+    margin:0 auto;
+    margin-top:10px;
 }
 
 h1 {
-    color: #f8eeee;
+    color: #FFFFFF;
     text-align: center;
     vertical-align: middle;
     line-height: 150px;
@@ -117,60 +123,76 @@ h1 {
 #container{
     background-color: #464646;
     width: 90%;
-    padding: 10px;
-    margin: 5%; 
     height: 700px;
+    padding: 10px;
+    margin:0 auto;
+    margin-top:10px;
+    display:block;
+    border-radius:25px;
+    
 }
 
-.nav-left {
+#navigator {
     background-color: #7d7d7d;
+    display:inline-block;
+    width: 20%;
+    height:90%;
     text-align: center;
     float: left;
-    width: 20%;
-    height: 65%;
     margin: 5px;
+    border-radius:25px;
 }
 
-.section{
+#section{
     background-color: #7d7d7d;
-    color: #f8eeee;
+    display:inline-block;
+    width: 55%;
+    height:90%;
+    color: #FFFFFF;
     text-align: center;
     float:left; 
-    width: 50%;
     margin: 5px;
+    border-radius:25px;
 }
 
-.section-header{    
+#section-header{    
+    background-color: #acacac;
+    display:inline-block;
+    margin: 5%;
+    border-radius:25px;
+}
+
+#section-article{    
     background-color: #acacac;
     margin: 5%;
+    border-radius:25px;
 }
 
-.section-article{    
+#section-footer{
     background-color: #acacac;
-    height: 45%;
     margin: 5%;
+    border-radius:25px;
 }
 
-.section-footer{
-    background-color: #acacac;
-    height: 20%;
-    margin: 5%;
-}
-
-.aside-right{
+#aside-right{
     background-color: #7d7d7d;
-    color: #f8eeee;
+    color: #FFFFFF;
     text-align: center;
-    float: left;
+    float: right;
     width: 20%;
-    margin: 5px;
-    height: 65%;
+    margin-top: 5px;
+    height: 90%;
+    border-radius: 25px;
 }
 
-.end-footer{
+#end-footer{
     background-color: #7d7d7d;
     color: #f8eeee;
+    width: 90%;
     text-align: center;
+    border-radius:25px;
+    padding:10px;
+    margin:0 auto;
 }
 
 
