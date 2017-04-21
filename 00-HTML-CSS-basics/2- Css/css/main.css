@@ -95,35 +95,41 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html *
+{
+   font-size: 14px;
+   font-family: sans-serif, Arial, Verdana, Helvetica;
+}
+
 body{
     background-color: #464646;
-    font-family:Verdana, Arial, Helvetica, sans-serif;
     color:#FFFFFF;
     padding:10px;
-    text-align:center;
+}
+
+h1{
+    font-size: 46px;
 }
 
 
 #head1 {
     background-color: #7d7d7d;
-    width: 90%;
-    border-radius:25px;
+    width: 95%;
     padding:10px;
     margin:0 auto;
     margin-top:10px;
+    text-align:center;
+    border-radius:25px;
 }
 
 h1 {
     color: #FFFFFF;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 150px;
 }
 
 #container{
     background-color: #464646;
-    width: 90%;
-    height: 700px;
+    width: 95%;
+    height: 600px;
     padding: 10px;
     margin:0 auto;
     margin-top:10px;
@@ -135,15 +141,15 @@ h1 {
 #navigator {
     background-color: #7d7d7d;
     display:inline-block;
+    font-size: 12px;
     width: 20%;
     height:90%;
-    text-align: center;
     float: left;
     margin: 5px;
     border-radius:25px;
 }
 
-#section{
+.content{
     background-color: #7d7d7d;
     display:inline-block;
     width: 55%;
@@ -176,6 +182,8 @@ h1 {
 
 #aside-right{
     background-color: #7d7d7d;
+    font-size: 10px;
+    position: relative;
     color: #FFFFFF;
     text-align: center;
     float: right;
@@ -188,11 +196,23 @@ h1 {
 #end-footer{
     background-color: #7d7d7d;
     color: #f8eeee;
-    width: 90%;
+    width: 95%;
     text-align: center;
     border-radius:25px;
     padding:10px;
     margin:0 auto;
+}
+
+.footer{
+    font-size: 10px;
+}
+
+[class*="a"] {
+    background: blue!important;
+}
+
+body [class$="r"] {
+    background: magenta!important;
 }
 
 
