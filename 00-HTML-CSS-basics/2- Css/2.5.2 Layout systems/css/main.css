@@ -95,125 +95,79 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-html *
-{
-   font-size: 14px;
-   font-family: sans-serif, Arial, Verdana, Helvetica;
+*, *:before, *:after {
+ padding: 0;
+ margin: 5px;
+ box-sizing: border-box;
 }
 
-body{
-    background-color: #464646;
-    color:#FFFFFF;
-    padding:10px;
+.wonders-of-the-world{
+    font-weight: bold;
 }
 
-h1{
-    font-size: 46px;
+.container{
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;
 }
 
-
-#head1 {
-    background-color: #7d7d7d;
-    width: 95%;
-    padding:10px;
-    margin:0 auto;
-    margin-top:10px;
-    text-align:center;
-    border-radius:25px;
-}
-
-h1 {
-    color: #FFFFFF;
-}
-
-#container{
-    background-color: #464646;
-    width: 95%;
-    height: 600px;
-    padding: 10px;
-    margin:0 auto;
-    margin-top:10px;
-    display:block;
-    border-radius:25px;
-    
-}
-
-#navigator {
-    background-color: #7d7d7d;
-    display:inline-block;
-    font-size: 12px;
-    width: 20%;
-    height:90%;
+.column {
     float: left;
-    margin: 5px;
-    border-radius:25px;
 }
 
-.content{
-    background-color: #7d7d7d;
-    display:inline-block;
-    width: 55%;
-    height:90%;
-    color: #FFFFFF;
-    text-align: center;
-    float:left; 
-    margin: 5px;
-    border-radius:25px;
+.gallery-grid {
+    clear: both;
+    display: inline-flex;
+    float: left;
+    width: 75%;
+    padding: 8px;
 }
 
-#section-header{    
-    background-color: #acacac;
-    display:inline-block;
-    margin: 5%;
-    border-radius:25px;
-}
-
-#section-article{    
-    background-color: #acacac;
-    margin: 5%;
-    border-radius:25px;
-}
-
-#section-footer{
-    background-color: #acacac;
-    margin: 5%;
-    border-radius:25px;
-}
-
-#aside-right{
-    background-color: #7d7d7d;
-    font-size: 10px;
+.gallery-grid img {
+    width: 100%;
+    height: auto;
     position: relative;
-    color: #FFFFFF;
+    float: left;
+    padding: 10px;
+}
+
+p {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+.one-fourth .hidden-text{
+    position:relative;
+    bottom:200px;
+    visibility:hidden;
+}
+
+.one-fourth .hidden-text {
+    font-weight:bold;
     text-align: center;
-    float: right;
-    width: 20%;
-    margin-top: 5px;
-    height: 90%;
-    border-radius: 25px;
 }
 
-#end-footer{
-    background-color: #7d7d7d;
-    color: #f8eeee;
-    width: 95%;
-    text-align: center;
-    border-radius:25px;
-    padding:10px;
-    margin:0 auto;
+.one-fourth:hover img {
+    background: grey;
+    opacity: 0.5;
 }
 
-.footer{
-    font-size: 10px;
+.one-fourth:hover .hidden-text{
+    visibility: visible;
 }
 
-[class*="a"] {
-    background: blue!important;
+.one-fourth img{
+    width: 200px;
+    height: 300px;
 }
 
-body [class$="r"] {
-    background: magenta!important;
-}
+
+
 
 
 
@@ -297,15 +251,39 @@ body [class$="r"] {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media only screen and (max-width: 800px) {
+
+    *, *:before, *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .container{
+        margin: auto;
+        width: 100%;
+    }
+
+    .gallery-grid {
+    clear: both;
+    display: inline-flex;
+    float: left;
+    width: 75%;
+    }
+
+    .gallery-grid img {
+    width: 100px;
+    height: 150px;
+    position: relative;
+    float: left;
+    }
+
+    .one-fourth .hidden-text{
+    position:relative;
+    bottom:100px;
+    visibility:hidden;
 }
 
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
