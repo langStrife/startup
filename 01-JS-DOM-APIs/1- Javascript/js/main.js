@@ -23,13 +23,14 @@ function getData() {
 	var xmlhttp = new XMLHttpRequest();
 
 	xmlhttp.addEventListener("load", reqListener);
-	xmlhttp.open("GET", "data.json");
+	xmlhttp.open("GET", "js\\data.json");
 	xmlhttp.send();
 }
 
 function attachSection(json) {
+	JSON.stringify(json);
 	var para = document.createElement("P");
 	var section = document.querySelector("section");
-	para.innerHTML =json;
+	para.innerHTML =json.value.joke;
 	document.querySelector("section").appendChild(para);    
 }
