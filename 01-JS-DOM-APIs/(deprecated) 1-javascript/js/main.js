@@ -66,21 +66,13 @@ function reqListenerError (){
 }
 //---------------------------------Ex9---------------------------------
 //--------------Standard Function to GET XmlHttpRequests--------------
-var repoButton = document.getElementsByClassName("search-repo")[0];
-repoButton.onclick = repoButtonclick();
-var repo = document.getElementById("chosen-repo");
-repo.onchange = function(repoButtonclick(repoValue)){
-	repoValue = document.getElementById("chosen-repo").getAttribute('value');
-}
+var repo = document.getElementById("chosen-repo")
 
-
-function getData(url, reqListenerStandard)
-{
+function getData(url, reqListenerStandard){
     var request = new XMLHttpRequest();
-    request.onreadystatechange = function()
-    {
-        if (request.readyState == 4 && request.status == 200)
-        {
+
+    request.onreadystatechange = function(){
+        if (request.readyState == 4 && request.status == 200){
             reqListenerStandard(request.responseText);
         }
     }; 
@@ -94,4 +86,34 @@ function reqListenerStandard(data) {
 
 function repoButtonclick(repoValue) {
 	getData("https://api.github.com/search/repositories?q="+repoValue, reqListenerStandard);
+}
+
+function repositoriosPedidos() {		
+	var repositoriosFullNames = JSON.parse(this.responseText).items;
+	if(repositoriosFullNames !== undefined) {
+		repositoriosFullNames.forEach(function(elem) {
+			appendNodeWithText(seccionRepositorio,"p",elem["full_name"]);
+			var lista = document.createElement("ul");
+			seccionRepositorio.appendChild(lista);
+			crearliDeListas(lista,elem.owner,"login");
+			crearliDeListas(lista,elem,"description","url","watchers_count");
+		});
+	}
+}
+
+//--------------------------------------------------------------
+//Funciones para punto 10 --------------------------------------
+function eliminarTagsFromParent(parent,nodoTag) {
+	var nodosNoArray = seccionRepositorio.getElementsByTagName(nodoTag);
+	var nodosArray = Array.prototype.slice.call(nodosNoArray);
+	nodosArray.forEach(function(elem){parent.removeChild(elem)})
+}
+
+function teclaPressBuscador(){
+		eliminarTagsFromParent(seccionRepositorio,"p");
+		eliminarTagsFromParent(seccionRepositorio,"ul");
+
+		seccionRepositorio.getElementsByTagName("span")[0].innerText = repoBuscadoCampo.value;
+		pedirRecurso("GET", "https://api.github.com/search/repositories?q="+repoBuscadoCampo.value, true , repositoriosPedidos);
+	}
 }

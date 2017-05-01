@@ -114,6 +114,35 @@ body > div > section > button {
     display: inline;
 }
 
+table {
+    width: 280px;
+    display: block;
+    margin: 0 auto;
+}
+
+div:last-of-type {
+    background-color: gray;
+    width: 50%;
+    float: right;
+    margin: 5px;
+}
+
+div:last-of-type section {
+    text-align:left;
+}
+
+div:last-of-type ul {
+    text-align:left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+div:last-of-type p {
+    text-align:left;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
 
 
 

@@ -15,19 +15,31 @@
     </head>
 
     <body>
-
         <section class="sec">
             <p>Hello World.</p>
         </section>
 
-        <button type="button" class="jokes-button">Jokes!</button>
-        <button type="button" class="error-button">Server Error</button>
-
-        <div>
-            <section>
-                <button type ="button" class="search-repo">Search Repository </button>
-                <input name="search-repo" type="text" id="chosen-repo" value=" ">
-            </section>
+        <button class="jokes-button">Jokes!</button>
+        <button class="error-button">Server Error</button>
+        <div class="container">
+            <div>
+                <section class="search-repo">
+                    <label for="chosen-repo">Click here to search</label>
+                    <input name="search-form" type="text" id="chosen-repo" value="javaScript">
+                    <button class="repo-button">Search Repo</button>
+                </section>
+            </div>
+            <div>
+                <article>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Car</th>
+                        </tr>
+                    </table>
+                </article>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
