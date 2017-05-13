@@ -1,21 +1,22 @@
-<nav class="navbar navbar-inverse">
-    <div>
-    	<p>welcome to</p>
+<div class="navbar navbar-inverse">
+  <div>
+    <p>welcome to</p>
 		<h1>Spotisearch</h1>
 		<p>Search your favorite songs over spotify. Just enter an artist's name in the following search box and enjoy!</p>
-      	<form class="form" role="search">
-      		<div class="input-group add-on">
-      			<input class="form-control" placeholder="Search" ng-model ="searchText" name="srch-term" id="srch-term" type="text">
-      			<div class="input-group-btn">
-					<button class="btn btn-default" ng-click="getResults()"><i class="glyphicon glyphicon-search"></i></button>
-               	</div>
-            </div>
-       	</form>
-    </div>
-</nav>
+    <form class="form" role="search">
+      <div class="input-group add-on">
+      	<input class="form-control" placeholder="Search" ng-model ="searchText" name="srch-term" id="srch-term" type="text">
+      	<div class="input-group-btn">
+          <button class="btn btn-default" ng-click="getResults()"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 <div>
   <ul ng-repeat="artist in artists">
   	<li>{{artist.name}}</li>
+    <img class="artist-album-picture" ng-src="{{artist.images[0].url}}" />
   </ul>
 </div>
 
