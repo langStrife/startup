@@ -8,22 +8,15 @@
  * Factory in the spotifyApp.
  */
 angular.module('spotifyApp')
-  .factory('searchService', function () {
-    // Service logic
-    // ...
+  .factory('searchService', ['$http', function(http) {
+    var responseData;
+      return {getResults: function (searchUrl, searchText, $http) {
 
-    
-
-    // Public API here
-    return {
-      getResults: function (url, searchText) {
-        var searchUrl = url  + searchText + '&type=artist';
-
-        return $http.get('').success(function(response) {
-            return response.data;
-        });;
+        return $http.get(searchUrl).then(function(response) {
+            return response.data
+        });
       }
-    };
-  });
+      }
+  }]);
 
 //return http promise
