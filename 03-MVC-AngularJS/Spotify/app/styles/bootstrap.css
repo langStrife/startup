@@ -1418,8 +1418,9 @@ a.bg-danger:focus {
 }
 ul,
 ol {
-  margin-top: 0;
-  margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 0px; 
 }
 ul ul,
 ol ul,
@@ -1621,9 +1622,11 @@ pre code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 10px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
+  overflow: auto;
 }
 .col-xs-12 {
   width: 100%;
@@ -6923,6 +6926,6 @@ a.list-group-item-danger.active:focus {
 }
 
 .artist-album-picture{
-  height: 35%;
-  width: 35%;
+  height: 250px;
+  width: 250px;
 }

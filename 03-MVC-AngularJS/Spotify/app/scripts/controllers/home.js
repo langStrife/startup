@@ -16,9 +16,11 @@ angular.module('spotifyApp')
 
     $scope.getResults = function(){
  		var searchUrl = 'https://api.spotify.com/v1/search?q=' + $scope.searchText + '&type=artist';
- 		searchService.getResults(searchUrl, $scope.searchText, $http).then(function successCallback(data){
+ 		searchService.getResults(searchUrl, $http).then(function successCallback(data){
  			$scope.artists = data.artists.items;
- 		})
-    }
+ 		});
+    };
    
   }]);
+
+//GET https://api.spotify.com/v1/artists/{id}/albums

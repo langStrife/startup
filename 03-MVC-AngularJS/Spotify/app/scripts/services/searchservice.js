@@ -9,14 +9,13 @@
  */
 angular.module('spotifyApp')
   .factory('searchService', ['$http', function(http) {
-    var responseData;
-      return {getResults: function (searchUrl, searchText, $http) {
+      return {getResults: function (searchUrl, $http) {
 
         return $http.get(searchUrl).then(function(response) {
-            return response.data
+        	console.log("This is what searchService returns: " + response.data.artists.items[0].name);
+            return response.data;
         });
-      }
-      }
+      }};
   }]);
 
 //return http promise

@@ -27,19 +27,23 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         url: '/home',
         templateUrl: '/views/home.html',
         controller: 'HomeCtrl'
-    })
-    ;
-}
-
-/*    .state('searchResult', {
-        url: '/home/:search',
-        templateUrl: '/views/searchResult.html',
-        controller: 'searchResultCtrl'
+/*    })
+    .state('chosenArtist', {
+        url: '/home/:albums',
+        templateUrl: '/views/chosenartist.html',
+        controller: 'ChosenartistCtrl'
+    }
         resolve:{
             artistId: ['$stateParams', function($stateParams){
             return $stateParams.search;
             }]
         }
-    })
-    */
-);
+    )*/
+})
+    .state('chosenArtist', {
+        templateUrl: '/views/chosenartist.html',
+        controller: 'ChosenartistCtrl',
+        param: {pickedArtist: null},
+        url: '/artist'
+    });
+});
