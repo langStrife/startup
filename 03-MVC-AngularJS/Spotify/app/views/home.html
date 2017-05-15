@@ -16,7 +16,7 @@
 
   <div ng-repeat="artist in artists" class="col-xs-5">
     <ul>
-      <li><a ng-href="#!/artist/:name"><button class="btn btn-primary" ng-href="#!/artist/:name">{{artist.name}}</button></a></li>
+      <li><a ng-href="#!/artist/{{artist.id}}">{{artist.name}}</a></li>
       <img class="artist-album-picture" ng-src="{{artist.images[0].url}}" alt="">
     </ul>
   </div>

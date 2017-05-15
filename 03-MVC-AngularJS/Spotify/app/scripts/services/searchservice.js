@@ -12,10 +12,7 @@ angular.module('spotifyApp')
       return {getResults: function (searchUrl, $http) {
 
         return $http.get(searchUrl).then(function(response) {
-        	console.log("This is what searchService returns: " + response.data.artists.items[0].name);
             return response.data;
         });
       }};
   }]);
-
-//return http promise

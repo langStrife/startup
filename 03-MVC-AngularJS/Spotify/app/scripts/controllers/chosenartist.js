@@ -8,31 +8,20 @@
  * Controller of the spotifyApp
  */
 angular.module('spotifyApp')
-  .controller('ChosenartistCtrl', ['$scope', '$stateParams', '$http', 'pickedArtist', function ($scope, $stateParams, $http) {
+  .controller('ChosenartistCtrl', ['$scope', '$stateParams', '$http','searchService', function ($scope, $stateParams, $http, searchService) {
 
-  	$scope.albumesLite = [];
-	$scope.albumesFull = [];
+  	$scope.albums = [];
 	
 	
 	function init() {
-		$scope.artist = $stateParams.pickedArtist;
-		$scope.getAlbums = function(){
+		$scope.artist = $stateParams.id;
+		console.log($scope.artist);
 
-			var albumsUrl = 'https://api.spotify.com/v1/artists/' + $scope.artists.id + '/albums';
-
-
-			getAlbumService.getAlbums(albumsUrl, $http).then(function successCallback(data){
- 			$scope.albumesLite = data.artists.items;
- 			console.log("albumesLite");
- 			var albumsLiteUrl = 'https://api.spotify.com/v1/albums/'+$scope.albumesLite[i].id;
- 			for(var i = 0; i < $scope.albumesLite.length; i++){
- 				getAlbumService.getAlbums(albumsLiteUrl, $http).then(function successCallback(data){
- 					$scope.albumesFull.push(response.data);
+		var albumsUrl = 'https://api.spotify.com/v1/artists/' + $scope.artist + '/albums';
+		searchService.getResults(albumsUrl, $http).then(function successCallback(data){	
+ 			$scope.albums = data.items;
  			}
-
  		);
- 			}});
-		}};
-
+	}
 	init();
 }]);

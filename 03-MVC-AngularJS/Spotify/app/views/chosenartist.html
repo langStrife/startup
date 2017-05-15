@@ -1,8 +1,9 @@
 <div class="container">
-	<section>
-		<p>You selected: </p>
-		<h1> {{artist.name}} </h1>
-	</section>
+	<h1>You selected: {{albums[0].artists[0].name}}</h1>
+  	<div ng-repeat="album in albums" class="col-xs-5">
+	    <ul>
+	    	<li><a ng-href="#!/album/{{album.id}}">{{album.name}}</a></li>
+	      	<img class="artist-album-picture" ng-src="{{album.images[0].url}}" alt="">
+	    </ul>
+  </div>
 </div>
-
-<an-artist ng-repeat="artist in artists" artist=artist></an-artist>

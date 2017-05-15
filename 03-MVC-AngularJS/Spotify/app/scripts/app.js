@@ -31,13 +31,14 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         })
     
     .state('chosenArtist', {
+        url: '/artist/{id}',
         templateUrl: 'views/chosenartist.html',
-        controller: 'ChosenartistCtrl',
-        url: '/artist/:name',
-        resolve:{
-            pickedArtist: ['$stateParams', function($stateParams){
-            return $stateParams.artist;
-            }]
-        }
+        controller: 'ChosenartistCtrl'
+    })
+    
+    .state('chosenAlbum', {
+        url: '/album/{id}',
+        templateUrl: 'views/chosenAlbum.html',
+        controller: 'ChosenalbumCtrl'
     });
 });
