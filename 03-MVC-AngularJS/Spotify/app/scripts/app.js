@@ -36,46 +36,8 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
         url: '/artist/:name',
         resolve:{
             pickedArtist: ['$stateParams', function($stateParams){
-            return $stateParams.searchText;
+            return $stateParams.artist;
             }]
         }
     });
 });
-/*    })
-    .state('chosenArtist', {
-        url: '/home/:albums',
-        templateUrl: '/views/chosenartist.html',
-        controller: 'ChosenartistCtrl'
-    }
-        resolve:{
-            artistId: ['$stateParams', function($stateParams){
-            return $stateParams.search;
-            }]
-        }
-    )*/
-
-
-
-
-
-
-/*
-
-myApp.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
-    $urlRouterProvider.otherwise('/');
-
-    $stateProvider
-    .state('home', {
-        url: '/home',
-        templateUrl: '/views/home.html',
-        controller: 'HomeCtrl'
-    })
-    .state('home.chosenArtist', {
-        templateUrl: '/views/chosenartist.html',
-        controller: 'ChosenartistCtrl',
-        param: {pickedArtist: null},
-        url: '/artist'
-    });
-}]);
-
-*/

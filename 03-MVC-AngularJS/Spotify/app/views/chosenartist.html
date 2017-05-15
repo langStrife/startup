@@ -1,6 +1,8 @@
-<div class="container" ui-sref="pickedArtist({pickedArtist:artist, id:artist.name})" >
+<div class="container">
 	<section>
 		<p>You selected: </p>
 		<h1> {{artist.name}} </h1>
 	</section>
 </div>
+
+<an-artist ng-repeat="artist in artists" artist=artist></an-artist>
