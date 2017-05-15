@@ -21,12 +21,26 @@ var myApp = angular.module('spotifyApp', [
 
 myApp.config(function($stateProvider, $urlRouterProvider) {
         
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/');
 
-    $stateProvider.state('home', {
-        url: '/home',
+    $stateProvider
+    .state('home', {
+        url: '/',
         templateUrl: '/views/home.html',
         controller: 'HomeCtrl'
+        })
+    
+    .state('chosenArtist', {
+        templateUrl: 'views/chosenartist.html',
+        controller: 'ChosenartistCtrl',
+        url: '/artist/:name',
+        resolve:{
+            pickedArtist: ['$stateParams', function($stateParams){
+            return $stateParams.searchText;
+            }]
+        }
+    });
+});
 /*    })
     .state('chosenArtist', {
         url: '/home/:albums',
@@ -39,11 +53,29 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             }]
         }
     )*/
-})
-    .state('chosenArtist', {
+
+
+
+
+
+
+/*
+
+myApp.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+    .state('home', {
+        url: '/home',
+        templateUrl: '/views/home.html',
+        controller: 'HomeCtrl'
+    })
+    .state('home.chosenArtist', {
         templateUrl: '/views/chosenartist.html',
         controller: 'ChosenartistCtrl',
         param: {pickedArtist: null},
         url: '/artist'
     });
-});
+}]);
+
+*/

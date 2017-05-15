@@ -10,11 +10,12 @@
 angular.module('spotifyApp')
   .factory('getAlbumService', ['$http', function(http) {
 
-  	return {getResults: function (searchUrl, $http) {
+  	return {getAlbums: function (searchUrl, $http) {
 
         return $http.get(searchUrl).then(function(response) {
+            console.log(response.data.artists.items[0].name);
             return response.data;
-
-  });
-    }};
+        });
+      }
+  	};
 }]);

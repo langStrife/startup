@@ -8,28 +8,31 @@
  * Controller of the spotifyApp
  */
 angular.module('spotifyApp')
-  .controller('ChosenartistCtrl', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
+  .controller('ChosenartistCtrl', ['$scope', '$stateParams', '$http', 'pickedArtist', function ($scope, $stateParams, $http) {
 
   	$scope.albumesLite = [];
 	$scope.albumesFull = [];
-	var artistUrl = 'https://api.spotify.com/v1/artists/' + $scope.artists.id + '/albums';
+	
 	
 	function init() {
-		console.log($scope.artist);
-		
-		//getAlbumService
+		$scope.artist = $stateParams.pickedArtist;
+		$scope.getAlbums = function(){
+
+			var albumsUrl = 'https://api.spotify.com/v1/artists/' + $scope.artists.id + '/albums';
 
 
-		$http.get('https://api.spotify.com/v1/artists/' + $scope.artists.id + '/albums')
-			.then(function(response){
-				$scope.albumesLite = response.data.items;
-				for(var i = 0; i < $scope.albumesLite.length; i++){		
-					$http.get('https://api.spotify.com/v1/albums/'+$scope.albumesLite[i].id)
-					.then(function(response){
-						$scope.albumesFull.push(response.data);
-					},function(){});
-				}
-			},function(){});
-	}
+			getAlbumService.getAlbums(albumsUrl, $http).then(function successCallback(data){
+ 			$scope.albumesLite = data.artists.items;
+ 			console.log("albumesLite");
+ 			var albumsLiteUrl = 'https://api.spotify.com/v1/albums/'+$scope.albumesLite[i].id;
+ 			for(var i = 0; i < $scope.albumesLite.length; i++){
+ 				getAlbumService.getAlbums(albumsLiteUrl, $http).then(function successCallback(data){
+ 					$scope.albumesFull.push(response.data);
+ 			}
+
+ 		);
+ 			}});
+		}};
+
 	init();
 }]);
