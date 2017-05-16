@@ -9,7 +9,7 @@
  */
 angular.module('spotifyApp')
   .controller('ChosenalbumCtrl', ['$scope', '$stateParams', '$http','searchService', function ($scope, $stateParams, $http, searchService) {
-
+  	
   	$scope.album = [];
 	
 	

@@ -6571,7 +6571,7 @@ button.close {
 .visible-lg-inline-block {
   display: none !important;
 }
-@media (max-width: 767px) {
+@media (max-width: 700px) {
   .visible-xs {
     display: block !important;
   }
@@ -6585,23 +6585,39 @@ button.close {
   td.visible-xs {
     display: table-cell !important;
   }
+
+  .artist-album-picture{
+    height: 100px;
+    width: 100px;
+  }
 }
-@media (max-width: 767px) {
+@media (max-width: 700px) {
   .visible-xs-block {
     display: block !important;
   }
+  .artist-album-picture{
+    height: 50px;
+    width: 50px;
+  }
 }
-@media (max-width: 767px) {
+@media (max-width: 700px) {
   .visible-xs-inline {
     display: inline !important;
   }
-}
-@media (max-width: 767px) {
-  .visible-xs-inline-block {
-    display: inline-block !important;
+  .artist-album-picture{
+    height: 100px;
+    width: 100px;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+
+@media (min-width: 900px) {
+  .artist-album-picture{
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 991px) {
   .visible-sm {
     display: block !important;
   }
@@ -6615,18 +6631,22 @@ button.close {
   td.visible-sm {
     display: table-cell !important;
   }
+  .artist-album-picture{
+    height: 150px;
+    width: 150px;
+  }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+
+@media (min-width: 700px) and (max-width: 991px) {
   .visible-sm-block {
     display: block !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 700px) and (max-width: 991px) {
   .visible-sm-inline {
     display: inline !important;
   }
-}
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 700px) and (max-width: 991px) {
   .visible-sm-inline-block {
     display: inline-block !important;
   }
@@ -6645,20 +6665,33 @@ button.close {
   td.visible-md {
     display: table-cell !important;
   }
+
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-block {
     display: block !important;
+  }
+  .artist-album-picture{
+    height: 100px;
+    width: 100px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-inline {
     display: inline !important;
   }
+  .artist-album-picture{
+    height: 100px;
+    width: 100px;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-inline-block {
     display: inline-block !important;
+  }
+  .artist-album-picture{
+    height: 100px;
+    width: 100px;
   }
 }
 @media (min-width: 1200px) {
@@ -6680,6 +6713,10 @@ button.close {
   .visible-lg-block {
     display: block !important;
   }
+  .artist-album-picture{
+    height: 150px;
+    width: 150px;
+  }
 }
 @media (min-width: 1200px) {
   .visible-lg-inline {
@@ -6700,15 +6737,27 @@ button.close {
   .hidden-sm {
     display: none !important;
   }
+  .artist-album-picture{
+    height: 150px;
+    width: 150px;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md {
     display: none !important;
   }
+  .artist-album-picture{
+    height: 100px;
+    width: 100px;
+  }
 }
 @media (min-width: 1200px) {
   .hidden-lg {
     display: none !important;
+  }
+  .artist-album-picture{
+    height: 100px;
+    width: 100px;
   }
 }
 .visible-print {
@@ -6925,7 +6974,11 @@ a.list-group-item-danger.active:focus {
   color: #fff;
 }
 
-.artist-album-picture{
-  height: 250px;
-  width: 250px;
+body > div.container > div > div > p:nth-child(4)
+{
+  margin-bottom: 0px;
+}
+
+#audio{
+  margin-top: 0px;
 }
